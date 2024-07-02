@@ -1,0 +1,19 @@
+<div class="form-style-6">
+  <p style="color: green"><%= notice %></p>
+
+  <h1><%= @kinds.count <= 1 ? (t :'activerecord.models.kind.one') : (t :'activerecord.models.kind.other') %></h1>
+
+  <div id="kinds">
+    <% @kinds.each do |kind| %>
+      <%= render kind %>
+      <p>
+        <%= link_to (t :'kinds.show'), kind, class: "btn btn-default" %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to (t :'kinds.new'), new_kind_path, class: "btn btn-default" %>
+
+  <%= link_to (t :'go_back'), home_index_path, class: "btn btn-default" %>
+</div>
+

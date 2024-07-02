@@ -1,0 +1,12 @@
+<div class="form-style-6">
+  <p style="color: green"><%= notice %></p>
+
+  <%= render @kind %>
+
+  <div>
+    <%= link_to (t :'kinds.edit'), edit_kind_path(@kind), class: "btn btn-default" %> |
+    <%= link_to (t :'go_back'), kinds_path, class: "btn btn-default" %>
+
+    <%= button_to (t :'kinds.destroy'), @kind, method: :delete, class: "btn btn-default" %>
+  </div>
+</div>

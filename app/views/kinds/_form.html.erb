@@ -1,0 +1,23 @@
+<%= form_with(model: kind, html: { class: 'form-style-6' }) do |form| %>
+  <% if kind.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(kind.errors.count, "error") %> prohibited this kind from being saved:</h2>
+
+      <ul>
+        <% kind.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label (t :description), style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="dflex">
+    <%= form.submit class: "btn btn-default", value: (t :description) %>
+    <%= link_to (t :'go_back'), kinds_path, class: "btn btn-default"%>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<div class="form-style-6">
+  <p style="color: green"><%= notice %></p>
+  <h1><%= @contacts.count <= 1 ? (t :'activerecord.models.contact.one') : (t :'activerecord.models.contact.other') %></h1>
+
+
+  <div id="contacts">
+    <% @contacts.each do |contact| %>
+      <div class="container" style="background: <%= cycle('white', '#F0FFF0') %>">
+        <%= render contact %>
+        <div class="d-flex align-items-center">
+          <p>
+            <%= link_to (t :'contacts.show'), contact, class: "btn btn-default" %>
+            <%= link_to (t :'contacts.destroy'), contact, method: :delete, class: "btn btn-default delete",
+                        data: {confirm: ("Tem certeza que deseja deletar?")}%>
+          </p>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+
+  <%= link_to (t :'contacts.new'), new_contact_path, class: "btn btn-default" %>
+
+  <%= link_to (t :'go_back'), home_index_path, class: "btn btn-default" %>
+
+  <div class="paginacao">
+    <%= paginate @contacts %>
+
+  </div>
+</div>

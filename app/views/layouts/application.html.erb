@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>NovoNotebook</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+      <%#= stylesheet_link_tag params[:controller] %>
+
+      <%#= javascript_importmap_tags "application" %>
+      <%= javascript_include_tag "application" %>
+      <%#= javascript_include_tag "alert" %>
+      <%#= javascript_include_tag "notify/notify" %>
+      <%#= javascript_include_tag params[:controller] %>
+
+    </head>
+
+    <body>
+<!--        <script>-->
+<!--            $.notify('hello !!');-->
+<!--        </script>-->
+        <%= yield %>
+    </body>
+</html>

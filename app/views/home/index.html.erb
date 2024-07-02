@@ -1,0 +1,22 @@
+<div class="form-style-6">
+  <h1>Agenda pessoal</h1>
+
+  <h2><%= l Date.today %></h2>
+
+  <div class="display_links" >
+    <p class="d-flex align-items-center">
+      <i class="bi bi-people"></i>
+      <%= link_to 'Contatos', contacts_path, class: "btn btn-default" %>
+    </p>
+    <p class="d-flex align-items-center">
+      <i class="bi bi-search"></i>
+      <%= link_to 'Tipos', kinds_path, class: "btn btn-default" %>
+    </p>
+    <p class="d-flex align-items-center">
+      <i class="bi bi-phone"></i>
+      <%= link_to 'Telefones', phones_path, class: "btn btn-default" %>
+    </p>
+
+<!--    <p><%#= link_to "Teste de AJAX", kinds_path, remote: true %></p>-->
+  </div>
+</div>

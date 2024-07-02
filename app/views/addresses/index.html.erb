@@ -1,0 +1,23 @@
+<div class="form-style-6">
+  <p style="color: green"><%= notice %></p>
+
+  <h1><%= @addresses.count <= 1 ? (t :'activerecord.models.address.one') : (t :'activerecord.models.address.other') %></h1>
+
+
+  <div id="addresses">
+    <% @addresses.each do |address| %>
+      <%= render address %>
+      <p>
+        <%= link_to (t :'addresses.show'), address, class: "btn btn-default" %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to (t :'addresses.new'), new_address_path, class: "btn btn-default" %>
+
+  <%= link_to (t :'go_back'), home_index_path, class: "btn btn-default" %>
+
+  <div class="paginacao">
+    <%= paginate @addresses %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+"pt-BR":
+  activerecord:
+    models:
+      contact: Contato
+    attributes:
+      contact:
+        name: "Nome"
+        email: "Email"
+        kind: "Tipo de contato"
+        address: "Endereço"
+        phones: "Telefones"
+        phone: "Telefone"
+        street: "Rua"
+        city: "Cidade"
+        state: "Estado"
+        rmk: "Obs."
+        description: "Descrição"
+
+      # will translate User attribute "login" as "Handle"

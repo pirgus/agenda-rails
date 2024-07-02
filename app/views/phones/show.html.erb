@@ -1,0 +1,12 @@
+<div class="form-style-6">
+  <p style="color: green"><%= notice %></p>
+
+  <%= render @phone %>
+
+  <div>
+    <%= link_to (t :'phones.edit'), edit_phone_path(@phone), class: "btn btn-default" %> |
+    <%= link_to (t :'go_back'), phones_path, class: "btn btn-default" %>
+
+    <%= button_to (t :'phones.destroy'), @phone, method: :delete, class: "btn btn-default" %>
+  </div>
+</div>

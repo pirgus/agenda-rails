@@ -1,0 +1,25 @@
+<div class="form-style-6">
+  <p style="color: green"><%= notice %></p>
+
+  <h1><%= @phones.count <= 1 ? (t :'activerecord.models.phone.one') : (t :'activerecord.models.phone.other') %></h1>
+
+
+  <div id="phones">
+    <% @phones.each do |phone| %>
+      <%= render phone %>
+      <p class="d-flex">
+        <%= link_to (t :'phones.show'), phone, class: "btn btn-default" %>
+        <%= button_to (t :'contacts.destroy'), @contact, method: :delete, class: "btn btn-default" %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to (t :'phones.new'), new_phone_path, class: "btn btn-default" %>
+
+  <%= link_to (t :'go_back'), home_index_path, class: "btn btn-default" %>
+
+
+  <div class="paginacao">
+    <%= paginate @phones %>
+  </div>
+</div>
